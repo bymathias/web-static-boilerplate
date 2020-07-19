@@ -1,0 +1,11 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    <name> -- <role> -- <twitter>
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Webpack, Babel, Bulma, Sass, PostCSS, Handlebars

@@ -1,0 +1,23 @@
+/* layouts/_section.scss */
+
+.footer__legal {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid $border;
+}
+
+@include tablet {
+  .footer__legal {
+    ul li {
+      display: inline;
+      padding: 0 0.25rem;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}

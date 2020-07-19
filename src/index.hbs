@@ -1,0 +1,164 @@
+{{assignVar '_' htmlWebpackPlugin.options._ }}
+{{assignVar 'assets' htmlWebpackPlugin.files }}
+<!doctype html>
+<html lang="{{ _.app.lang }}" class="is-layout-default has-navbar-fixed-top">
+<head>
+  {{> _head
+    title="Home"
+    description="Description of the page goes here"
+    image="apple-icon-touch-180x180.png"
+    url="index.html"
+  }}
+
+  {{#each assets.css }}
+  <link rel="stylesheet" href="{{ this }}">
+  {{/each}}
+</head>
+<body class="home">
+
+  {{> navbar class="is-fixed-top" }}
+
+  <div id="wrapper">
+    <section class="hero is-fullheight-with-navbar is-primary">
+      <div class="hero-body">
+        <div class="container">
+          <div class="hero-body__slogan has-text-centered">
+            <h1 class="title is-size-2 pb-2">{{ _.app.title  }}</h1>
+            <h2 class="subtitle is-size-5">{{ _.app.description }}</h2>
+            <div class="buttons buttons-centered">
+              <a class="button is-github" target="_blank" href="">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>View on Github</span>
+              </a>
+              <a class="button is-danger" target="_blank" href="">
+                <span class="icon"><i class="fas fa-download"></i></span>
+                <span>Download</span>
+              </a>
+            </div>
+            <div class="tag-version">
+              <div class="tags has-addons is-family-code">
+                <span class="tag is-success">version</span>
+                <span class="tag is-info">{{ _.env.npm_package_version }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="section-1" class="section is-medium">
+      <div class="container">
+        <h3 class="is-size-3 pb-3">Section 1</h3>
+        <div class="columns">
+          <div class="column is-half">
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              It has survived not only five centuries, but also the leap into electronic typesetting,
+              remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+              sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+              like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+          </div>
+          <div class="column is-half">
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              It has survived not only five centuries, but also the leap into electronic typesetting,
+              remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+              sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+              like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-half">
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              It has survived not only five centuries, but also the leap into electronic typesetting,
+              remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+              sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+              like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+          </div>
+          <div class="column is-half">
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              It has survived not only five centuries, but also the leap into electronic typesetting,
+              remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+              sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+              like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+          </div>
+        </div>
+      </div><!-- .container -->
+    </section><!-- #section-1 -->
+    <section id="section-2" class="section is-medium">
+      <div class="container">
+        <h3 class="is-size-3 pb-3">Section 1</h3>
+        <div class="columns">
+          <div class="column is-half">
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              It has survived not only five centuries, but also the leap into electronic typesetting,
+              remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+              sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+              like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+          </div>
+          <div class="column is-half">
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              It has survived not only five centuries, but also the leap into electronic typesetting,
+              remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+              sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+              like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-half">
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              It has survived not only five centuries, but also the leap into electronic typesetting,
+              remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+              sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+              like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+          </div>
+          <div class="column is-half">
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              It has survived not only five centuries, but also the leap into electronic typesetting,
+              remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+              sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+              like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+          </div>
+        </div>
+      </div><!-- .container -->
+    </section><!-- #section-2 -->
+  </div><!-- #wrapper -->
+
+  {{> footer }}
+
+  {{#each assets.js }}
+  <script src="{{ this }}"></script>
+  {{/each}}
+
+  {{> _analytics }}
+</body>
+</html>

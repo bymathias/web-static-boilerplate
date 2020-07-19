@@ -1,0 +1,29 @@
+<nav class="navbar has-shadow {{#if class }}{{ class }}{{/if}}" role="navigation" aria-label="main navigation">
+  <div class="container">
+
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{{ app.env.APP_URL }}">
+        <span class="title is-size-6">{{ _.app.title }}</span>
+      </a>
+      <span role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenuHeroA">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </div><!-- .navbar-brand -->
+
+    <div class="navbar-menu" id="navbarMenuHeroA">
+      <div class="navbar-end">
+        <a class="navbar-item" href="{{ _.env.APP_URL }}#section-1">Section 1</a>
+        <a class="navbar-item" href="{{ _.env.APP_URL }}#section-2">Section 2</a>
+        <span class="navbar-item buttons">
+          <a class="button is-info" href="{{ app.env.APP_URL }}#contact">
+            <span class="icon"><i class="fas fa-at"></i></span>
+            <span>Contact</span>
+          </a>
+        </span>
+      </div>
+    </div><!-- navbar-menu -->
+
+  </div><!-- .container -->
+</nav><!-- .navbar -->

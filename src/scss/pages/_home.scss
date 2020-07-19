@@ -1,0 +1,26 @@
+/* pages/_home.scss */
+
+// -----------------------------------------------------------------------------
+//  Section: hero
+// -----------------------------------------------------------------------------
+
+.home {
+  .hero-body__slogan {
+    margin: 0 auto;
+    max-width: 38rem;
+  }
+
+  #wrapper .section {
+    border-bottom: 1px solid $light;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .tag-version {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

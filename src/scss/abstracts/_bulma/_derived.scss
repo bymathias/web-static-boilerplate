@@ -1,0 +1,29 @@
+/* abstracts/_bulma/_derived.scss */
+
+$primary: $color-1;
+$info:    $color-2;
+$success: $color-3;
+$warning: $color-4;
+$danger:  $color-5;
+
+// -------------------------------------------
+//  Add brand colors
+// -------------------------------------------
+
+$google:    map-get($brand-colors, "google");
+$github:    map-get($brand-colors, "github");
+$linkedin:  map-get($brand-colors, "linkedin");
+$facebook:  map-get($brand-colors, "facebook");
+$twitter:   map-get($brand-colors, "twitter");
+$instagram: map-get($brand-colors, "instagram");
+
+$google-invert:    findColorInvert($google);
+$github-invert:    findColorInvert($github);
+$linkedin-invert:  findColorInvert($linkedin);
+$facebook-invert:  findColorInvert($facebook);
+$twitter-invert:   findColorInvert($twitter);
+$instagram-invert: findColorInvert($instagram);
+
+// -----------------------------------------------------------------------------
+//  Override derived Bulma variables
+// -----------------------------------------------------------------------------

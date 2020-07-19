@@ -1,0 +1,40 @@
+{{assignVar '_' htmlWebpackPlugin.options._ }}
+{{assignVar 'assets' htmlWebpackPlugin.files }}
+<!doctype html>
+<html lang="{{ _.app.lang }}" class="is-layout-bare">
+<head>
+  {{> _head
+    title="Page Not Found"
+    description="Sorry, but the page you were trying to view does not exist."
+    app=htmlWebpackPlugin.options.app
+    head="bare"
+  }}
+
+  {{#each assets.css }}
+  <link rel="stylesheet" href="{{ this }}">
+  {{/each}}
+</head>
+<body class="error-404">
+
+  {{> navbar }}
+
+  <div id=wrapper>
+    <div class="has-text-centered">
+      <h1 class="title is-size-4">Page Not Found</h1>
+      <p class="subtitle">Sorry, but the page you were trying to view does not exist.</p>
+      <div class="buttons buttons-centered">
+        <a class="button is-info" href="{{ _.env.APP_URL }}/">
+          <span class="icon"><i class="far fa-arrow-alt-circle-left"></i></span>
+          <span>Go back home</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {{> footer }}
+
+  {{#each assets.js }}
+  <script src="{{ this }}"></script>
+  {{/each}}
+</body>
+</html>

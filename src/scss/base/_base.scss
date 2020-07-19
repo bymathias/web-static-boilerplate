@@ -1,0 +1,8 @@
+/* base/_base.scss */
+
+html {
+  // Fix navbar height on scroll to anchor
+  scroll-padding-top: $navbar-height;
+  // Add smooth scrolling to page
+  scroll-behavior: smooth;
+}

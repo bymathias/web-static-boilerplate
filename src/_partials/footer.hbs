@@ -1,0 +1,27 @@
+<footer class="footer">
+
+  <div class="footer__legal">
+    <div class="container">
+      <div class="level">
+
+        <div class="level-left">
+          <div class="level-item">
+            <ul>
+              <li><a href="">Link 1</a></li>
+              <li><a href="">Link 2</a></li>
+              <li><a href="{{ _.env.APP_URL }}/404.html">404</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="level-right">
+          <div class="level-item">
+            <p>&copy; <span id="copyright-date"></span> <a href="{{ _.env.APP_URL }}">{{ _.app.title }}</a>. All rights reserved.</p>
+          </div>
+        </div>
+
+      </div><!-- .level -->
+    </div><!-- .container -->
+  </div><!-- .footer__legal -->
+
+</footer><!-- .footer -->

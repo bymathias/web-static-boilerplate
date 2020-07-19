@@ -1,0 +1,110 @@
+{{! Defines the encoding of the website, utf-8 is the standard }}
+<meta charset="utf-8">
+{{! Set the document's title }}
+<title>{{ title }} | {{ _.app.title }}</title>
+{{! Short description of the document (limit to 150 characters) }}
+<meta name="description" content="{{ description }}">
+{{!
+    Viewport settings related to mobile responsiveness
+    `width=device-width` means that it will use the physical width of the device
+    `initial-scale=1` is the initial zoom, 1 means no zoom
+}}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{{! Name of web application (only should be used if the website is used as an app) }}
+<meta name="application-name" content="{{ title }}">
+{{! Google Android: Add to home screen }}
+<meta name="mobile-web-app-capable" content="yes">
+
+{{#ifCon head "!==" "bare" }}
+  {{! Verify website ownership }}
+  {{#if _.env.PRODUCTION }}
+    {{! @see: https://search.google.com/search-console }}
+    {{#if _.app.google.verify_id }}
+    <meta name="google-site-verification" content="{{ _.app.google.verify_id }}">
+    {{/if}}
+    {{! @see: https://webmaster.yandex.com }}
+    {{#if _.app.yandex.verify_id }}
+    <meta name="yandex-verification" content="{{ _.app.yandex.verify_id }}">
+    {{/if}}
+    {{! @see: https://www.bing.com/toolbox/webmaster }}
+    {{#if _.app.bing.verify_id }}
+    <meta name="msvalidate.01" content="{{ _.app.bing.verify_id }}">
+    {{/if}}
+    {{! @see: https://www.alexa.com/siteinfo }}
+    {{#if _.app.alexa.verify_id }}
+    <meta name="alexaVerifyID" content="{{ _.app.alexa.verify_id }}">
+    {{/if}}
+  {{/if}}
+
+  {{! Facebook open graph data }}
+  <meta name="fb:app_id" content="{{ _.app.facebook.app_id }}">
+  <meta name="og:url" content="{{ _.env.APP_URL }}/{{ url }}">
+  <meta name="og:type" content="">
+  <meta name="og:title" content="{{ title }}">
+  <meta name="og:image" content="/{{ image }}">
+  <meta name="og:description" content="{{ description }}">
+  <meta name="og:site_name" content="{{ _.app.title }}">
+  <meta name="article:author" content="">
+
+  {{! Twitter cards }}
+  <meta name="twitter:card" content="">
+  <meta name="twitter:site" content="{{ _.app.title }}">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="/{{ image }}">
+
+  {{! Schema.org (Google). Requires to add attributes to your top html tag ! }}
+  <link rel="author" href="">
+  <link rel="publisher" href="">
+  <meta itemprop="name" content="{{ _.app.title }}">
+  <meta itemprop="description" content="{{ description }}">
+  <meta itemprop="image" content="/{{ image }}">
+
+  {{! Favicon.{ico,png} }}
+  {{! Use SVG as a favicon for the most modern browsers }}
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  {{! If a browser doesn’t support a SVG favicon, fallback to .png and .ico files }}
+  {{#each _.config.faviconSizes.favicons }}
+  <link rel="alternate icon" type="image/png" sizes="{{ this }}" href="/favicon-{{ this }}.png">
+  {{/each}}
+  <link rel="alternate icon" href="/favicon.ico">
+
+  {{! Microsoft Internet Explorer }}
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+
+  {{! Apple iOS }}
+  {{! Enable standalone (full-screen) mode }}
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  {{! Status bar appearance (has no effect unless standalone mode is enabled) }}
+  <meta name="apple-mobile-web-app-status-bar-style" content="{{ _.config.favicons.appleStatusBarStyle }}">
+  {{! Launch Icon Title }}
+  <meta name="apple-mobile-web-app-title" content="{{ _.app.title }}">
+  {{! Launch Icons and Screen Images }}
+  {{#each _.config.faviconSizes.appleIcons }}
+  <link rel="apple-touch-icon" sizes="{{ this }}" href="/apple-touch-icon-{{ this }}.png">
+  {{/each}}
+  {{#each _.config.faviconSizes.appleImages }}
+  <link rel="apple-touch-startup-image" media="(device-width: {{ this.[0] }}px) and (device-height: {{ this.[1] }}px) and (-webkit-device-pixel-ratio: {{ this.[2] }}) and (orientation: {{ this.[3] }})" href="/apple-touch-startup-image-{{ this.[4] }}.png">
+  {{/each}}
+
+  {{! Links to a JSON file that specifies "installation" credentials for the web applications }}
+  {{#if _.config.favicons.loadManifestWithCredentials }}
+  <link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
+  {{else}}
+  <link rel="manifest" href="/manifest.json">
+  {{/if}}
+
+  {{! Safari icon that the user sees when they pin your site }}
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="{{ _.config.favicons.theme_color }}">
+
+  {{! Opera Coast icon }}
+  <link rel="icon" type="image/png" sizes="228x228" href="/coast-228x228.png">
+
+  {{! Yandex widget manifest }}
+  <link rel="yandex-tableau-widget" href="/yandex-browser-manifest.json">
+
+  {{! Theme Color for Chrome, Firefox OS and Opera }}
+  <meta name="theme-color" content="{{ _.config.favicons.theme_color }}">
+{{/ifCon}}
